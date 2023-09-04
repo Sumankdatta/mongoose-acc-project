@@ -39,3 +39,12 @@ exports.productBulkUpdateServices = async (data) => {
     const result = await Promise.all(products)
     return result
 }
+
+exports.deletedProductByIdServices = async (id) => {
+    const result = await Product.deleteOne({ _id: id })
+    return result
+}
+exports.deletedBulkProductServices = async (id) => {
+    const result = await Product.deleteMany({ _id: id })
+    return result
+}
